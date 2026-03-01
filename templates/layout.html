@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title or "BANTUAN TUNAI ONE OFF (SELANGOR) 2026" }}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+
+    <div class="container">
+      <div class="flash">
+        {% with messages = get_flashed_messages() %} {% if messages %} {% for
+        message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %} {% endif %} {% endwith %}
+      </div>
+
+      {% block content %} {% endblock %}
+    </div>
+
+    <footer>
+      <img
+        src="{{ url_for('static', filename='ini1.png') }}"
+        alt="Logo Footer"
+      />
+    </footer>
+  </body>
+</html>
